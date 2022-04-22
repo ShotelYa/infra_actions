@@ -63,9 +63,10 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: hdhxdhzxdhjzjgjxgj
+        key: ${{ secrets.SSH_KEY }}
 
         passphrase: ${{ secrets.PASSPHRASE }} 
+
         script: |
           sudo docker pull shotel/infra
           sudo docker stop $(sudo docker ps -a -q)
