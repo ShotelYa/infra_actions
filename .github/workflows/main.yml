@@ -61,39 +61,11 @@ jobs:
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
-        host: 185.72.246.211
-        username: shotel
-        key: -----BEGIN RSA PRIVATE KEY-----
-        Proc-Type: 4,ENCRYPTED
-        DEK-Info: AES-128-CBC,51E7FDE04211A27831D5B88A53404A16
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: hdhxdhzxdhjzjgjxgj
 
-vC++PGtETURVq0Y5gMJgefkUlMb8TBL2Jx/w/mtlOt8aZui3dsi9yN7EmTK3NZMY
-4XnTxUetvEHlQQJoiuGtWRhkbOAchZ6mIPngxe3Qd11RHEq3yqpLkgPloULQ+WDQ
-YVxJkEfaAauOw6mdA81+74GomDEqVBIBya9hgLNEGH+OoXnElTgVLdSPiYn1vCV2
-ouf3sh4DxNd40E2YRYpAuW0TnTGP5i5vQVQf9Fpc54K2M1adiOBr61GJCqZzZw6t
-hmoJKdHNnNjfqkzesnVNWEZMWTrTfFSrnCN0z+RllLMuSnue6ekkr5gzRF2MZLzA
-MyzXD+gxuSbBiyqDzDGADRmbv4fNw68j3lsBt1QcxxezdPXUOmHsuRhbMW3rY+A0
-T8euxwYJKwYJW7HmocA6YI6dN+FBF9ETKiO9CsRxWM1yF4f2ZW58G10W26W3Iv6m
-QVoFL8ZbP5n6bR49pPGWUfMNQQ2dRL1jdYQ2WQ2ESM1pC3D3sirTJKGl8AQFRkbC
-miuze0JhmaD4oyzM14KnH292KOM+fm80oPX6hwKPtMhqoQrUaI5NO1GRqDWrzlOs
-lauCAxbxAHC+t8UgKPExAcXLH53LcNCoYrLJ9Z8CVgBi/E0rGoQmRUTz1aDIEbsw
-4qfWuWLdqF75WQBGrUg82RY5QW5GjTUh4CSjZyoNOo1LUsiHft9vAZPszOvytiCg
-c2Os+2Rg2jrnWoFPODYWhqXK/k8SGMomxGRPSygiYP+K5jXvTWAifurGCsZ6oI7u
-0zZ6JUvKxU2ZPuWSOrRInCiR5kNeFKZkkFfbyRTdvpj0L4qGfgjggQUX1dOWgQ/j
-rNcT2221pZsRzC6ZMzOFMPI4Vg3SBAnRncfr0MvikKJjpgH/NPg3veSF0DRGKIze
-22IBHni5d5fH3Wp87P8vCiTXdWv6s1f4LlSK7Hv0XgqibG9gG153x9BDRPaa9v3I
-OUeY0hu8diQH1kXydVQY8meVyemGjwBb8ECkb4CCqA+OuWZe83/P6517czsidn1I
-9gP36WIMFbnkC/zdWg4thhqMjMxhwsXN3zoh21B8czNYUiACHqX8YZDLrKgJxsCF
-6uc7F2DwlcAJZo1zboIKcKMlHGO93dbKfwfqkaAHeHwXNXGc05vilwQRRuTmeIFj
-GyNHGj3QZW1LSjOmnUJwk0lZA/t6k89ZifOgpBhOrvfbr4qhgrj7yyaw+zCnRorX
-WaeyknGLF/TbEz1frQGoNxmK4MJXN3nGlxWJO1QoMtVEVljdx3JXiztspl1VZonA
-mig4M0P9unHqehM/WbuLjDySSLZoZOIxVF8NJhe10IvlMVi+lgTZcZwKSl0tH/OT
-wNMA4ZcIdoIvElUyANAo9Ik1BxDEHwifBH5WeLBoG+BLr6Hoz9I8cdFiU7iIkDqB
-U1K7Vl9+NeHshOFGoMz/1X0vMef7DeysTH8PcbBvXfxXmeDIy+y6DHw9OkahFALN
-UQXRL6Yq7BrV6sC3luD5lhHSoBcOUvAPHhAL29tnGD5Cq9R7VORwPnhI9Zcpca6c
-sijo1661FQMtg+yNKxjMmeB38oOc4cBxGqgII41t41YZgjBwMbhwyM8Y1A3gRthm
------END RSA PRIVATE KEY-----
-        passphrase: 856349 
+        passphrase: ${{ secrets.PASSPHRASE }} 
         script: |
           sudo docker pull shotel/infra
           sudo docker stop $(sudo docker ps -a -q)
