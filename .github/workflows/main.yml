@@ -61,10 +61,10 @@ jobs:
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
+        host: 185.72.246.211
         username: shotel
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }} 
+        passphrase: 856349 
         script: |
           sudo docker pull shotel/infra
           sudo docker stop $(sudo docker ps -a -q)
