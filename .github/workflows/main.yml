@@ -71,4 +71,4 @@ jobs:
           sudo docker pull shotel/infra
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 shotel/infra
-          jenkins ALL=(ALL) NOPASSWD: ALL
+          
